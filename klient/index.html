@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello jQuery</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="script.js"></script>
+		<style>
+			body {font-size: 2rem}
+			.main_div {text-align: center;}
+			select {width: 200px; text-align: center;}
+		</style>
+    </head>
+
+    <body>
+        <div class="main_div">
+			<h3>Wpisz części URL oraz wybierz typ zapytania:</h3>
+			<span>Część podstawowa np. </span><b>http://localhost:8080/WebAppName/webresources/</b><br>
+			<span>Część rozszerzona np. </span><b>RestService/score</b><br><br>
+            <form id="reqForm"">
+				<label for="basic">Część podstawowa:</label><br>
+				<input type="text" id="basic" name="basic" value="http://localhost:8080/HelloWorldApp/webresources/" size="70"><br>
+				<label for="extended">Część rozszerzona:</label><br>
+				<input type="text" id="extended" name="extended" value="RestService/score" size="70"><br>
+				<label for="reqType">Typ zapytania:</label><br>
+				<select id="reqType" name="reqType" onchange="hideElement()">
+					<optgroup label="Typ zapytania">
+					<option value="get">GET</option>
+					<option value="post">POST</option>
+					</optgroup>
+				</select><br>
+				<label id="postParamsLabel" for="postParams" style="visibility: hidden"><b>Parametry zapytania POST</b> </label><br>
+				<input type="text" id="postParams" name="postParams" value="" size="70" style="visibility: hidden"><br>
+				<br>
+				<input type="submit" value="Submit" style="font-size:2rem">
+			</form>
+			<br>
+        </div>
+    </body>
+</html>
